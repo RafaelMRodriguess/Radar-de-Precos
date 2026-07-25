@@ -15,4 +15,12 @@ with engine.begin() as conn:
         sql_historico_precos = arquivo.read()
     conn.exec_driver_sql(sql_historico_precos)
 
+    with open("sql/vw_posicionamento_categoria.sql", "r", encoding="utf-8") as arquivo:
+        sql_posicionamento_categoria = arquivo.read()
+    conn.exec_driver_sql(sql_posicionamento_categoria)
+
+    with open("sql/vw_ranking_produtos.sql", "r", encoding="utf-8") as arquivo:
+        sql_ranking_produtos = arquivo.read()
+    conn.exec_driver_sql(sql_ranking_produtos)
+
 print("Views criadas com sucesso!")
