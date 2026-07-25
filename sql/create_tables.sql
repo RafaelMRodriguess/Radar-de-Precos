@@ -1,5 +1,5 @@
 --CRIAÇÃO DA TABELA DE PRODUTOS
-CREATE TABLE products (
+CREATE TABLE IF NOT EXISTS products (
     product_id INT PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE products (
 );
 
 --CRIAÇÃO DA TABELA DE PRECOS
-CREATE TABLE price_history (
+CREATE TABLE IF NOT EXISTS price_history (
     product_history_id SERIAL PRIMARY KEY,
     product_id INT NOT NULL REFERENCES products(product_id),
     price DECIMAL(10, 2) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE price_history (
 );
 
 --CRIAÇÃO DA TABELA DE ESTOQUE
-CREATE TABLE stock_history (
+CREATE TABLE IF NOT EXISTS stock_history (
     stock_history_id SERIAL PRIMARY KEY,
     product_id INT NOT NULL REFERENCES products(product_id),
     stock INT NOT NULL,
