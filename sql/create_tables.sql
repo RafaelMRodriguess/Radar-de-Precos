@@ -26,6 +26,7 @@ CREATE TABLE price_history (
 CREATE TABLE stock_history (
     stock_history_id SERIAL PRIMARY KEY,
     product_id INT NOT NULL REFERENCES products(product_id),
+    stock INT NOT NULL,
     availability_status VARCHAR(50) NOT NULL,
     collection_date TIMESTAMP NOT NULL
 );
