@@ -1,0 +1,18 @@
+from banco.conexao import conectar
+
+engine = conectar()
+
+if engine is None:
+    raise Exception("Não foi possível se conectar ao banco de dados")
+
+with engine.begin() as conn:
+
+    with open("sql/vw_base_produtos.sql", "r", encoding="utf-8") as arquivo:
+        sql_base_produtos = arquivo.read()
+    conn.exec_driver_sql(sql_base_produtos)
+
+    with open("sql/vw_historico_precos.sql", "r", encoding="utf-8") as arquivo:
+        sql_historico_precos = arquivo.read()
+    conn.exec_driver_sql(sql_historico_precos)
+
+print("Views criadas com sucesso!")
