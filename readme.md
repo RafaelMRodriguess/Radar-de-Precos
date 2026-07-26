@@ -66,15 +66,22 @@ DummyJSON API
 ```text
 monitoramento-precos/
 
+├── api/
+│   └── api.py
+│
+├── banco/
+│   └── conexao.py
+│
 ├── dashboard/
-│   ├── Dashboard_Monitoramento_Precos.pbix
-│   └── dashboard_monitoramento_precos.png
+│   ├── dashboard_monitoramento_precos.png
+│   └── monitoramento_de_precos.pbix
+│
+├── etl/
+│   └── tratamento.ipynb
 │
 ├── scripts/
-│   ├── coleta_dados.py
 │   ├── criar_tabelas.py
-│   ├── criar_views.py
-│   └── conexao.py
+│   └── criar_views.py
 │
 ├── sql/
 │   ├── create_tables.sql
@@ -82,8 +89,8 @@ monitoramento-precos/
 │   ├── vw_historico_precos.sql
 │   ├── vw_kpis.sql
 │   ├── vw_posicionamento_categoria.sql
-│   ├── vw_ranking_produtos.sql
-│   └── vw_top10_maiores_descontos.sql
+│   ├── vw_ranking_descontos.sql
+│   └── vw_ranking_produtos.sql
 │
 ├── .env
 ├── .gitignore
