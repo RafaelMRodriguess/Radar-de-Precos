@@ -120,7 +120,7 @@ Após o tratamento, os dados são armazenados em um banco PostgreSQL utilizando 
 
 ---
 
-# 🗄 Modelagem
+# Modelagem
 
 | Tabela | Finalidade |
 |---------|------------|
@@ -130,7 +130,7 @@ Após o tratamento, os dados são armazenados em um banco PostgreSQL utilizando 
 
 ---
 
-# 📊 Views SQL
+# Views SQL
 
 | View | Finalidade |
 |------|------------|
@@ -143,7 +143,7 @@ Após o tratamento, os dados são armazenados em um banco PostgreSQL utilizando 
 
 ---
 
-# 📈 Dashboard
+# Dashboard
 
 O dashboard apresenta uma visão executiva do monitoramento de preços dos produtos.
 
