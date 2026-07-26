@@ -27,4 +27,8 @@ with engine.begin() as conn:
         sql_kpis = arquivo.read()
     conn.exec_driver_sql(sql_kpis)
 
+    with open("sql/vw_ranking_descontos.sql", "r", encoding="utf-8") as arquivo:
+        sql_descontos = arquivo.read()
+    conn.exec_driver_sql(sql_descontos)
+
 print("Views criadas com sucesso!")
