@@ -1,0 +1,39 @@
+services:
+
+  postgres:
+    image: postgres:17
+
+    container_name: retail_postgres
+
+    restart: always
+
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_SENHA}
+      POSTGRES_DB: ${DB_BANCO}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+
+    container_name: retail_python
+
+    depends_on:
+      - postgres
+
+    env_file:
+      - .env
+
+    volumes:
+      - .:/app
+
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres_data:
